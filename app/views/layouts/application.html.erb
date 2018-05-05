@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chat</title>
+    <title>Question to Lions!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -20,6 +20,10 @@
             <span class="icon-bar"></span>
           </button>
 
+
+          <%= link_to main_index_url, class: "navbar-brand" do %>
+            메인 페이지
+          <% end %>
 
         </div>
 
@@ -48,11 +52,8 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
+    
     <%= yield %>
-
-
-
-
+    
   </body>
 </html>
