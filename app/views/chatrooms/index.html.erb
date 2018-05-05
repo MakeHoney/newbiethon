@@ -29,12 +29,9 @@
         <tbody>
           <% @chatrooms.each do |chatroom| %>
           <tr>
-            <td><%= chatroom.name %></td>
-            <td><%= link_to 'Show', chatroom %></td>
-            <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-            <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <td><%= link_to '입장', chatroom_chatroom_users_path(chatroom), method: :post %></td>
+            <td><%= link_to chatroom.name, chatroom_chatroom_users_path(chatroom), method: :post %></td>
             <td><%= link_to '나가기', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
+            <td><%= link_to '채팅방 삭제', chatroom, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
           </tr>
           <% end %>
         </tbody>

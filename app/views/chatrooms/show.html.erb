@@ -6,7 +6,9 @@
       <ul>
         <% current_user.chatrooms.each do |chatroom| %>
         <li><%= link_to chatroom.name, chatroom %></li>
+
         <% end %>
+
       </ul>
       <% end %>
     </div>
@@ -33,6 +35,7 @@
 			<%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
 			<!-- autofocus 창에 입장시 textarea에 자동 포커스 -->
 		<% end %>
+    <%= link_to '돌아가기', '/chatrooms' %>
 
     </div>
   </div>
