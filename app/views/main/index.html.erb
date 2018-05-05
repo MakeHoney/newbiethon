@@ -1,2 +1,13 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+
+
+          <%= link_to main_index_url, class: "navbar-brand" do %>
+            메인 페이지
+          <% end %>
+
+          <%= link_to question_index_url, class: "navbar-brand" do %>
+            질문 게시판
+          <% end %>
+
+          <%= link_to chatrooms_path, class: "navbar-brand" do %>
+            LIVE 채팅
+          <% end %>
