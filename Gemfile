@@ -33,6 +33,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'jquery-rails'
 gem 'devise-bootstrapped', '~> 0.1.1'
+gem 'jquery-turbolinks'
 
 
 # Use ActiveStorage variant
