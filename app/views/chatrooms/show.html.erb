@@ -26,9 +26,10 @@
 			<% end %>
 		</div>
 
-
-
-
+		<%= form_for [@chatroom, Message.new] do |f| %>
+			<%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+			<!-- autofocus 창에 입장시 textarea에 자동 포커스 -->
+		<% end %>
 
     </div>
   </div>
