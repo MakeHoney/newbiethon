@@ -28,7 +28,7 @@ class ChatroomsController < ApplicationController
 
     respond_to do |format|
       if @chatroom.save
-        format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
+        format.html { redirect_to @chatroom, notice: '채팅방이 생성되었습니다.' }
         format.json { render :show, status: :created, location: @chatroom }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ChatroomsController < ApplicationController
   def update
     respond_to do |format|
       if @chatroom.update(chatroom_params)
-        format.html { redirect_to @chatroom, notice: 'Chatroom was successfully updated.' }
+        format.html { redirect_to @chatroom, notice: '채팅방이 수정되었습니다.' }
         format.json { render :show, status: :ok, location: @chatroom }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ChatroomsController < ApplicationController
   def destroy
     @chatroom.destroy
     respond_to do |format|
-      format.html { redirect_to chatrooms_url, notice: 'Chatroom was successfully destroyed.' }
+      format.html { redirect_to chatrooms_url, notice: '채팅방이 삭제되었습니다.' }
       format.json { head :no_content }
     end
   end
