@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <!-- <h1>Edit <%= resource_name.to_s.humanize %></h1> -->
+    <h1>정보수정</h1>
+    <hr>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :닉네임 %><br />
+        <%= f.text_field :username, autofocus: false, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :이메일 %><br />
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :새_비밀번호 %> <i>(수정을 원치 않으면 빈칸으로 남겨 놓습니다.)</i><br />
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :새_비밀번호_확인 %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :현재_비밀번호 %><br />
+        <%= f.password_field :current_password, autocomplete: "off", class: 'form-control'  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "정보수정", class: 'btn btn-lg btn-block btn-primary' %>
+      </div>
+    <% end %>
+    <hr>
+
+    <h2>회원탈퇴</h2>
+
+    <p><%= button_to "탈퇴", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure? You cannot undo this." }, method: :delete %></p>
+
+    <%= link_to "돌아가기", :back %>
+    <hr>
+  </div>
+</div>
