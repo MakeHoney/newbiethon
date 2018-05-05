@@ -59,25 +59,8 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+    <%= yield %>
 
-    <div class="fluid-container">
-      <div class="row">
-        <div class="col-sm-2">
-          <% if user_signed_in? %>
-            <h5>입장 중인 방</h5>
-            <ul>
-              <% current_user.chatrooms.each do |chatroom| %>
-                <li><%= link_to chatroom.name, chatroom %></li>
-              <% end %>
-            </ul>
-          <% end %>
-        </div>
-
-        <div class="col-sm-10">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
 
 
 
